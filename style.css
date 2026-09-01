@@ -1,0 +1,154 @@
+:root {
+  --stone: #F3EFE8;
+  --ink: #26221D;
+  --brass: #A9793C;
+  --slate: #5B6A6C;
+  --teal: #1F3634;
+  --teal-text: #E7DFD1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--stone);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; }
+
+.topbar {
+  padding: 28px 40px 0;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+}
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+  gap: 48px;
+  padding: 40px;
+}
+
+.hero-text {
+  align-self: center;
+  max-width: 480px;
+}
+
+.hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.tagline {
+  margin-top: 28px;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--slate);
+  max-width: 38ch;
+}
+
+.hero-photo {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(169,121,60,0.18), transparent 55%),
+    repeating-linear-gradient(100deg, #E7E0D2 0px, #E7E0D2 2px, #EFE9DD 2px, #EFE9DD 90px),
+    var(--teal);
+  min-height: 320px;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.contact-bar {
+  background: var(--teal);
+  color: var(--teal-text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.contact-item {
+  flex: 1 1 220px;
+  padding: 22px 40px;
+  border-left: 1px solid rgba(231,223,209,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-item:first-child {
+  border-left: none;
+}
+
+.contact-label {
+  font-size: 0.78rem;
+  color: rgba(231,223,209,0.6);
+}
+
+.contact-value {
+  font-size: 1rem;
+}
+
+.contact-value a {
+  text-decoration: none;
+}
+
+.contact-value a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+  .topbar { padding: 22px 24px 0; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 32px;
+  }
+
+  .hero-photo {
+    order: -1;
+    min-height: 260px;
+  }
+
+  .hero-text {
+    max-width: none;
+  }
+
+  .contact-item {
+    border-left: none;
+    border-top: 1px solid rgba(231,223,209,0.18);
+    padding: 18px 24px;
+  }
+
+  .contact-item:first-child {
+    border-top: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
